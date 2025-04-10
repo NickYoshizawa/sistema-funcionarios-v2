@@ -3,7 +3,7 @@
 def input_str(msg: str, none_permission: bool = False):
     while True:
         try:
-            x = str(input(msg))
+            x = str(input(msg)).strip()
             if x != "" or none_permission:
                 break
             else:
@@ -16,7 +16,7 @@ def input_str(msg: str, none_permission: bool = False):
 def input_float(msg: str, none_permission: bool = False) -> float:
     while True:
         try:
-            x = str(input(msg))
+            x = str(input(msg)).strip()
             if x == "" and none_permission:
                 break
             x = float(x)
@@ -28,7 +28,7 @@ def input_float(msg: str, none_permission: bool = False) -> float:
 def input_int(msg: str, none_permission: bool = False) -> int:
     while True:
         try:
-            x = str(input(msg))
+            x = str(input(msg)).strip()
             if x == "" and none_permission:
                 break
             x = int(x)
@@ -40,7 +40,7 @@ def input_int(msg: str, none_permission: bool = False) -> int:
 def input_gmail(msg: str, none_permission: bool = False) -> str:
     while True:
         try:
-            x = str(input(msg))
+            x = str(input(msg)).strip()
             if x == "" and none_permission:
                 break
             if '@gmail.com' not in x:
