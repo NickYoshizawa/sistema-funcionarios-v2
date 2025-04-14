@@ -1,4 +1,4 @@
-from ui.login import LoginScreen
+from ui.login_window import LoginScreen
 
 
 def verify_login(username, password):
