@@ -4,6 +4,7 @@ from  utils.layout import *
 from components.DefaultButton import DefaultButton
 from components.LabelEntry import LabelEntry
 from config.theme import COLOR_BACKGROUND
+from ui.main_window import MainScreen
 
 
 class LoginScreen(ctk.CTk):
@@ -14,7 +15,6 @@ class LoginScreen(ctk.CTk):
         self.callback_login = callback_login
 
         self.title("Login")
-        self.geometry("500x400")
         self.minsize(400,300)
         
         self.frame = ctk.CTkFrame(self)
@@ -36,6 +36,8 @@ class LoginScreen(ctk.CTk):
         pw = self.pw_entry.get()
 
         if self.callback_login(user, pw):
-            self.destroy()
+            self.after(100, self.destroy)
+            MainScreen().mainloop()
+            
         else:
             mb.showerror("Erro", "Usuário ou senha inválidos")

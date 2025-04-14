@@ -5,4 +5,5 @@ def verify_login(username, password):
     print(username, password)
     return True
 
-LoginScreen(verify_login).mainloop()
+if __name__ == "__main__":
+    LoginScreen(verify_login).mainloop()    
