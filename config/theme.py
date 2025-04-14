@@ -1,9 +1,10 @@
 # ------------------------
-# 🎨 Color Palette (Dark Theme)
+# 🎨 Color Palette & Images
 # ------------------------
 
 COLOR_BACKGROUND = "#1E1E1E"
 COLOR_FRAME = "#2B2B2B"
+WINDOW_ICON = r"/assets/icon/icon.ico"
 
 # ------------------------
 # 🧱 Button Styling

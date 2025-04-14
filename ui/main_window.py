@@ -13,4 +13,4 @@ class MainScreen(ctk.CTk):
         self.title("Login")
         self.geometry("500x400")
         
-        self.after(10, lambda: center_window(self))
+        self.after(10, lambda: center_window(self)) 
