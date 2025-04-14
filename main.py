@@ -1,7 +1,8 @@
 from ui.login import LoginScreen
 
 
-def teste(a, c):
-    return False
+def verify_login(username, password):
+    print(username, password)
+    return True
 
-LoginScreen(teste).mainloop()
+LoginScreen(verify_login).mainloop()
