@@ -1,14 +1,15 @@
 import customtkinter as ctk
 import tkinter.messagebox as mb
 from  utils.layout import *
-from components.DefaultEntry import DefaultEntry
 from components.DefaultButton import DefaultButton
 from components.LabelEntry import LabelEntry
+from config.theme import COLOR_BACKGROUND
+
 
 class LoginScreen(ctk.CTk):
 
     def __init__(self, callback_login):
-        super().__init__()
+        super().__init__(fg_color=COLOR_BACKGROUND)
 
         self.callback_login = callback_login
 

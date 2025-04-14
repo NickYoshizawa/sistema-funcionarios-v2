@@ -3,13 +3,14 @@ from components.DefaultEntry import DefaultEntry
 from components.DefaultLabel import DefaultLabel
 
 
+
 class LabelEntry(ctk.CTkFrame):
     def __init__(self,
         master,
         label_text="Text",
         show=None,
         corner_radius=10,
-        border_width=1,
+        border_width=0,
         bg_color="transparent",
         fg_color="transparent",
         border_color=None,
