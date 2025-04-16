@@ -3,7 +3,7 @@ import tkinter.messagebox as mb
 from  utils.layout import *
 from components.DefaultButton import DefaultButton
 from components.LabelEntry import LabelEntry
-from config.theme import COLOR_BACKGROUND
+from config.theme import COLOR_BACKGROUND, WINDOW_ICON
 from ui.main_window import MainScreen
 
 
@@ -15,7 +15,10 @@ class LoginScreen(ctk.CTk):
         self.callback_login = callback_login
 
         self.title("Login")
+        self.geometry("500x400")
         self.minsize(400,300)
+        
+        self.iconbitmap(WINDOW_ICON)
         
         self.frame = ctk.CTkFrame(self)
         self.frame.pack(expand=True)
