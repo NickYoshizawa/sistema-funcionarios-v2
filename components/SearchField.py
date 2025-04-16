@@ -7,15 +7,18 @@ class SearchField(ctk.CTkFrame):
         
         self.callback_search = callback_search
         
-        img_lupa = ctk.CTkImage(Image.open("assets/imgs/lupa.png"), size=(25, 25))
+        self.img_lupa = ctk.CTkImage(Image.open("assets/imgs/lupa.png"), size=(25, 25))
         
         self.entry = ctk.CTkEntry(self, border_width=0, corner_radius=0, fg_color="transparent")
         self.entry.pack(side="left", fill="both", expand=True, padx=(5,0), pady=5)
         
-        self.icon_label = ctk.CTkLabel(self, image=img_lupa, text="", cursor="hand2")
+        self.icon_label = ctk.CTkLabel(self, image=self.img_lupa, text="", cursor="hand2")
         self.icon_label.pack(side="right", padx=(0,5), pady=5)
         
         self.icon_label.bind("<Button-1>", self.on_click)
     
     def on_click(self, event=None):
         self.callback_search()
+    
+    def get(self):
+        return self.entry.get()
