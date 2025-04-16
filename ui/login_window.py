@@ -39,8 +39,11 @@ class LoginScreen(ctk.CTk):
         pw = self.pw_entry.get()
 
         if self.callback_login(user, pw):
-            self.after(100, self.destroy)
-            MainScreen().mainloop()
+            #self.after(100, self.destroy)
+            #MainScreen().mainloop()
             
+            for widget in self.winfo_children():
+                widget.destroy()
+            MainScreen(self).pack(expand=True, fill="both")
         else:
             mb.showerror("Erro", "Usuário ou senha inválidos")
