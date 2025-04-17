@@ -14,13 +14,9 @@ class App(ctk.CTk):
 
         self.after(10, lambda: center_window(self, 600, 500))
         
-        self.login_screen = LoginScreen(self, self.verify_login)
+        self.login_screen = LoginScreen(self)
         self.login_screen.packFrame()
         
-
-    def verify_login(self, username, password):
-        print(username, password)
-        return True
 
 if __name__ == "__main__":
     App().mainloop()    

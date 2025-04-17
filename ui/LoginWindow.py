@@ -1,17 +1,21 @@
 import customtkinter as ctk
 import tkinter.messagebox as mb
+
 from  utils.layout import *
+from ui.MainWindow import MainScreen
+from models.login_verify import login_verify
+
 from components.DefaultButton import DefaultButton
 from components.LabelEntry import LabelEntry
-from ui.MainWindow import MainScreen
+
 
 
 class LoginScreen(ctk.CTkFrame):
 
-    def __init__(self, master, callback_login, width = 200, height = 200, corner_radius = None, border_width = None, bg_color = "transparent", fg_color = None, border_color = None, background_corner_colors = None, overwrite_preferred_drawing_method = None, **kwargs):
+    def __init__(self, master, _callback_login: callable = login_verify, width = 200, height = 200, corner_radius = None, border_width = None, bg_color = "transparent", fg_color = None, border_color = None, background_corner_colors = None, overwrite_preferred_drawing_method = None, **kwargs):
         super().__init__(master, width, height, corner_radius, border_width, bg_color, fg_color, border_color, background_corner_colors, overwrite_preferred_drawing_method, **kwargs)
         self.master = master
-        self.callback_login = callback_login
+        self._callback_login = _callback_login
         
         self.frame = ctk.CTkFrame(self)
         self.frame.pack(expand=True)
@@ -29,7 +33,7 @@ class LoginScreen(ctk.CTkFrame):
         user = self.user_entry.get()
         pw = self.pw_entry.get()
 
-        if self.callback_login(user, pw):
+        if self._callback_login(user, pw):
             self.destroy()
             MainScreen(self.master).packFrame()
         else:
