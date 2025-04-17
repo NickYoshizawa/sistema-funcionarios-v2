@@ -1,9 +1,26 @@
-from ui.login_window import LoginScreen
+from ui.LoginWindow import LoginScreen
+import customtkinter as ctk
+from config.theme import WINDOW_ICON
+from utils.layout import center_window
 
+class App(ctk.CTk):
+    def __init__(self, fg_color = None, **kwargs):
+        super().__init__(fg_color, **kwargs)
 
-def verify_login(username, password):
-    print(username, password)
-    return True
+        self.title("Sistema Funcionários")
+        self.minsize(400,300)
+
+        self.iconbitmap(WINDOW_ICON)
+
+        self.after(10, lambda: center_window(self, 600, 500))
+        
+        self.login_screen = LoginScreen(self, self.verify_login)
+        self.login_screen.packFrame()
+        
+
+    def verify_login(self, username, password):
+        print(username, password)
+        return True
 
 if __name__ == "__main__":
-    LoginScreen(verify_login).mainloop()    
+    App().mainloop()    
