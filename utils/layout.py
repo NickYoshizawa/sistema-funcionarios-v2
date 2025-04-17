@@ -1,7 +1,5 @@
-def center_window(window):
+def center_window(window, width, height):
     window.update_idletasks()
-    width = window.winfo_width()
-    height = window.winfo_height()
     tela_width = window.winfo_screenwidth()
     tela_height = window.winfo_screenheight()
     x = int((tela_width / 2) - (width / 2))
